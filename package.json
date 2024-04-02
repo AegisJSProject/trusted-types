@@ -1,8 +1,13 @@
 {
   "name": "@aegisjsproject/trusted-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A polyfill for the Trusted Types API",
-  "keywords": [],
+  "keywords": [
+    "aegis",
+    "trusted-types",
+    "security",
+    "polyfill"
+  ],
   "type": "module",
   "main": "./trusted-types.cjs",
   "module": "./trusted-types.js",
