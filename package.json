@@ -1,46 +1,54 @@
 {
-  "name": "npm-template",
-  "version": "1.1.1",
-  "description": "A template repo for npm packages",
+  "name": "@aegisjsproject/trusted-types",
+  "version": "1.0.0",
+  "description": "A polyfill for the Trusted Types API",
   "keywords": [],
   "type": "module",
-  "main": "./cjs/index.cjs",
-  "module": "./index.js",
-  "unpkg": "./index.js",
+  "main": "./trusted-types.cjs",
+  "module": "./trusted-types.js",
+  "unpkg": "./bundle.min.js",
   "exports": {
     ".": {
-      "import": "./index.js",
-      "require": "./cjs/index.cjs"
+      "import": "./trusted-types.js",
+      "require": "./trusted-types.cjs"
     },
     "./*.js": {
       "import": "./*.js",
-      "require": "./cjs/*.cjs"
+      "require": "./*.cjs"
     },
     "./*.mjs": {
       "import": "./*.js",
-      "require": "./cjs/*.cjs"
+      "require": "./*.cjs"
     },
     "./*.cjs": {
       "import": "./*.js",
-      "require": "./cjs/*.cjs"
+      "require": "./*.cjs"
     },
     "./*": {
       "import": "./*.js",
-      "require": "./cjs/*.cjs"
+      "require": "./*.cjs"
     }
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "private": false,
+  "config": {
+    "serve": {
+      "domain": "localhost",
+      "path": "./",
+      "port": 8080
+    }
+  },
   "scripts": {
     "test": "npm run lint:js && npm run build",
+    "start": "http-server ${npm_package_config_serve_path} -c-1 --port ${npm_package_config_serve_port} --gzip true --brotli true -a ${npm_package_config_serve_domain} -o /test/",
     "preversion": "npm test",
     "prepare": "npm run build",
     "lint:js": "eslint .",
     "fix:js": "eslint . --fix",
     "build": "npm run build:js",
-    "clean": "rm -f ./cjs/*.cjs",
+    "clean": "rm -f ./*.cjs",
     "build:js": "npm run clean && rollup -c rollup.config.js",
     "create:lock": "npm i --package-lock-only --ignore-scripts --no-audit --no-fund",
     "version:bump": "npm run version:bump:patch",
@@ -50,7 +58,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shgysk8zer0/npm-template.git"
+    "url": "git+https://github.com/AegisJSProject/trusted-types.git"
   },
   "author": "Chris Zuber <admin@kernvalley.us>",
   "license": "MIT",
@@ -65,12 +73,15 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/shgysk8zer0/npm-template/issues"
+    "url": "https://github.com/AegisJSProject/trusted-types/issues"
   },
-  "homepage": "https://github.com/shgysk8zer0/npm-template#readme",
+  "homepage": "https://github.com/AegisJSProject/trusted-types#readme",
   "devDependencies": {
+    "@aegisjsproject/sanitizer": "^0.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "@shgysk8zer0/js-utils": "^1.0.1",
-    "@shgysk8zer0/npm-utils": "^1.1.2"
+    "@rollup/plugin-terser": "^0.4.4",
+    "eslint": "^8.57.0",
+    "http-server": "^14.1.1",
+    "rollup": "^4.13.2"
   }
 }

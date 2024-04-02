@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="color-scheme" content="light dark" />
+		<meta http-equiv="Content-Security-Policy" content="
+			default-src 'none';
+			script-src 'self' 'nonce-d5011418-a83d-4555-8e7b-4b6df4c55b52';
+			style-src 'self' blob:;
+			trusted-types default aegis-sanitizer#html;
+			require-trusted-types-for 'script';
+		" />
+		<title>AegisJSProject/trusted-types Demo</title>
+		<script type="importmap" nonce="d5011418-a83d-4555-8e7b-4b6df4c55b52">
+			{
+				"imports": {
+					"@aegisjsproject/trusted-types": "../bundle.js",
+					"@aegisjsproject/trusted-types/": "../",
+					"@aegisjsproject/sanitizer": "../node_modules/@aegisjsproject/sanitizer/polyfill.min.js",
+					"@aegisjsproject/sanitizer/": "../node_modules/@aegisjsproject/sanitizer/",
+					"@shgysk8zer0/": "https://unpkg.com/@shgysk8zer0/",
+					"@aegisjsproject/": "https://unpkg.com/@aegisjsproject/"
+				}
+			}
+		</script>
+		<script type="module" src="./index.js" referrerpolicy="no-referrer"></script>
+	</head>
+	<body></body>
+</html>

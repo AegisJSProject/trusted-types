@@ -1,19 +1,44 @@
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import { warningHandler } from '@shgysk8zer0/js-utils/rollup';
-import { listDirByExt } from '@shgysk8zer0/npm-utils/fs';
+import terser from '@rollup/plugin-terser';
+import nodeResolve from '@rollup/plugin-node-resolve';
+const plugins = [terser()];
 
-const modules = await listDirByExt('./', '.js');
-
-export default {
-	input: modules.filter(module => ! module.endsWith('.config.js')),
-	external: [],
-	onwarn: warningHandler,
-	output: {
-		dir: './cjs/',
+export default [{
+	input: 'trusted-types.js',
+	output: [{
+		file: 'trusted-types.cjs',
 		format: 'cjs',
-		preserveModules: true,
-		entryFileNames: '[name].cjs',
-		chunkFileNames: '[name]-[hash].cjs',
-	},
+	}, {
+		file: 'trusted-types.min.js',
+		format: 'iife',
+		plugins,
+	}]
+}, {
+	input: 'harden.js',
+	output: [{
+		file: 'harden.cjs',
+		format: 'cjs',
+	}, {
+		file: 'harden.min.js',
+		format: 'iife',
+		plugins,
+	}]
+}, {
+	input: 'bundle.js',
 	plugins: [nodeResolve()],
-};
+	external: [
+		'@aegisjsproject/trusted-types/trusted-types.js',
+		'@aegisjsproject/trusted-types/harden.js',
+	],
+	output: {
+		file: 'bundle.cjs',
+		format: 'cjs',
+	}
+}, {
+	input: 'bundle.js',
+	plugins: [nodeResolve()],
+	output: {
+		file: 'bundle.min.js',
+		format: 'iife',
+		plugins,
+	}
+}];
