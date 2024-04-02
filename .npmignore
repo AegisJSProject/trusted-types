@@ -1,5 +1,6 @@
 node_modules/
 .github/
+test/
 .editorconfig
 .eslintignore
 .eslintrc.json
@@ -14,6 +15,4 @@ importmap.yaml
 *.tgz
 *.log
 *.bak
-*.min.*
-*.map
 *.env
