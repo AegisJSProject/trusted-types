@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Update tests for latest `@aegisjsproject/sanitizer`
+- Update ESLint & Super Linter config + version
+
 ## [v1.0.1] - 2024-04-01
 
 ### Added

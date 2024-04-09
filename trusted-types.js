@@ -218,7 +218,6 @@ if ('HTMLElement' in globalThis && ! ('trustedTypes' in globalThis)) {
 		#createHTML;
 		#createScript;
 		#createScriptURL;
-		#policies;
 
 		constructor(name, {
 			createHTML,
