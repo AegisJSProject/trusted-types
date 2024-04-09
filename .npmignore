@@ -5,6 +5,7 @@ test/
 .eslintignore
 .eslintrc.json
 .htmlhintrc
+stylelintrc.json
 .gitattributes
 .gitignore
 .nvmrc
