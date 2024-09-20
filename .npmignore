@@ -12,6 +12,7 @@ stylelintrc.json
 importmap.json
 importmap.yaml
 *.config.js
+*.test.js
 *.gz
 *.tgz
 *.log
