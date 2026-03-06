@@ -84,7 +84,7 @@
   "devDependencies": {
     "@aegisjsproject/sanitizer": "^0.2.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
-    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-terser": "^1.0.0",
     "@shgysk8zer0/eslint-config": "^1.0.1",
     "eslint": "^10.0.0",
     "http-server": "^14.1.1",
