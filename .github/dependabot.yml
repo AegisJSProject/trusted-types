@@ -8,22 +8,26 @@ updates:
       - javascript
     schedule:
       interval: weekly
-      day: thursday
-      time: '08:00'
+      day: wednesday
+      time: '09:00'
       timezone: America/Los_Angeles
-    reviewers:
-      - shgysk8zer0
     assignees:
       - shgysk8zer0
+    groups:
+      all-dependencies:
+        patterns:
+          - '*'
   - package-ecosystem: github-actions
     directory: /
     open-pull-requests-limit: 10
     schedule:
       interval: weekly
-      day: thursday
-      time: '08:00'
+      day: wednesday
+      time: '09:00'
       timezone: America/Los_Angeles
-    reviewers:
-      - shgysk8zer0
     assignees:
       - shgysk8zer0
+    groups:
+      all-dependencies:
+        patterns:
+          - '*'
