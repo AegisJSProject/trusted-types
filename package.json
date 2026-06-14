@@ -1,6 +1,6 @@
 {
   "name": "@aegisjsproject/trusted-types",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A polyfill for the Trusted Types API",
   "keywords": [
     "aegis",
@@ -82,12 +82,15 @@
   },
   "homepage": "https://github.com/AegisJSProject/trusted-types#readme",
   "devDependencies": {
-    "@aegisjsproject/sanitizer": "^0.2.0",
-    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@aegisjsproject/sanitizer": "^0.3.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^1.0.0",
-    "@shgysk8zer0/eslint-config": "^1.0.1",
-    "eslint": "^10.0.0",
+    "@shgysk8zer0/eslint-config": "^1.1.0",
+    "eslint": "^10.5.0",
     "http-server": "^14.1.1",
-    "rollup": "^4.13.2"
+    "rollup": "^4.62.0"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
   }
 }
